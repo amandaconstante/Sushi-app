@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/components/button.dart';
+import 'package:travel_app/pages/menu_page.dart';
+import 'package:travel_app/theme/colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage( {super.key});
@@ -8,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 147, 30, 24),
+      backgroundColor: primaryColor,
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(
@@ -55,7 +57,12 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 25),
 
           // button
-          MyButton(text: "Get Started")
+          MyButton(text: "Get Started",
+          onTap: () {
+            // go to menu page
+            Navigator.pushNamed(context, '/menupage');
+          },
+          )
         ],
         ),
       ),
